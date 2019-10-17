@@ -1,27 +1,27 @@
 
 Discarded input sections
 
- .text          0x0000000000000000        0x0 /tmp/cc1FRLUr.o
- .data          0x0000000000000000        0x0 /tmp/cc1FRLUr.o
- .bss           0x0000000000000000        0x0 /tmp/cc1FRLUr.o
- .text          0x0000000000000000      0x130 /tmp/cc0bM0IH.o
- .data          0x0000000000000000        0x4 /tmp/cc0bM0IH.o
- .bss           0x0000000000000000        0x0 /tmp/cc0bM0IH.o
- .rodata        0x0000000000000000       0x40 /tmp/cc0bM0IH.o
- .debug_info    0x0000000000000000      0x4ac /tmp/cc0bM0IH.o
- .debug_abbrev  0x0000000000000000      0x133 /tmp/cc0bM0IH.o
- .debug_loc     0x0000000000000000       0xd1 /tmp/cc0bM0IH.o
+ .text          0x0000000000000000        0x0 /tmp/ccbcapEu.o
+ .data          0x0000000000000000        0x0 /tmp/ccbcapEu.o
+ .bss           0x0000000000000000        0x0 /tmp/ccbcapEu.o
+ .text          0x0000000000000000      0x130 /tmp/ccMkbqtH.o
+ .data          0x0000000000000000        0x4 /tmp/ccMkbqtH.o
+ .bss           0x0000000000000000        0x0 /tmp/ccMkbqtH.o
+ .rodata        0x0000000000000000       0x40 /tmp/ccMkbqtH.o
+ .debug_info    0x0000000000000000      0x4ac /tmp/ccMkbqtH.o
+ .debug_abbrev  0x0000000000000000      0x133 /tmp/ccMkbqtH.o
+ .debug_loc     0x0000000000000000       0xd1 /tmp/ccMkbqtH.o
  .debug_aranges
-                0x0000000000000000       0x20 /tmp/cc0bM0IH.o
- .debug_line    0x0000000000000000      0x323 /tmp/cc0bM0IH.o
- .debug_str     0x0000000000000000      0x3ea /tmp/cc0bM0IH.o
- .comment       0x0000000000000000       0x77 /tmp/cc0bM0IH.o
- .debug_frame   0x0000000000000000       0x38 /tmp/cc0bM0IH.o
+                0x0000000000000000       0x20 /tmp/ccMkbqtH.o
+ .debug_line    0x0000000000000000      0x341 /tmp/ccMkbqtH.o
+ .debug_str     0x0000000000000000      0x3f7 /tmp/ccMkbqtH.o
+ .comment       0x0000000000000000       0x77 /tmp/ccMkbqtH.o
+ .debug_frame   0x0000000000000000       0x38 /tmp/ccMkbqtH.o
  .ARM.attributes
-                0x0000000000000000       0x2c /tmp/cc0bM0IH.o
- .text          0x0000000000000000        0x0 /tmp/ccwROXZX.o
- .data          0x0000000000000000        0x0 /tmp/ccwROXZX.o
- .bss           0x0000000000000000        0x0 /tmp/ccwROXZX.o
+                0x0000000000000000       0x2c /tmp/ccMkbqtH.o
+ .text          0x0000000000000000        0x0 /tmp/ccNW48KU.o
+ .data          0x0000000000000000        0x0 /tmp/ccNW48KU.o
+ .bss           0x0000000000000000        0x0 /tmp/ccNW48KU.o
 
 Memory Configuration
 
@@ -32,9 +32,9 @@ RamLoc8          0x0000000010000000 0x0000000000002000 xrw
 
 Linker script and memory map
 
-LOAD /tmp/cc1FRLUr.o
-LOAD /tmp/cc0bM0IH.o
-LOAD /tmp/ccwROXZX.o
+LOAD /tmp/ccbcapEu.o
+LOAD /tmp/ccMkbqtH.o
+LOAD /tmp/ccNW48KU.o
                 0x0000000000000000                __base_MFlash64 = 0x0
                 0x0000000000000000                __base_Flash = 0x0
                 0x0000000000010000                __top_MFlash64 = 0x10000
@@ -48,7 +48,7 @@ LOAD /tmp/ccwROXZX.o
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
- .isr_vector    0x0000000000000000       0xc0 /tmp/ccwROXZX.o
+ .isr_vector    0x0000000000000000       0xc0 /tmp/ccNW48KU.o
                 0x0000000000000000                g_pfnVectors
                 0x00000000000000c0                . = ALIGN (0x4)
                 0x00000000000000c0                __section_table_start = .
@@ -64,7 +64,7 @@ LOAD /tmp/ccwROXZX.o
                 0x00000000000000d4                __section_table_end = .
  *(.after_vectors*)
  .after_vectors
-                0x00000000000000d4       0xac /tmp/ccwROXZX.o
+                0x00000000000000d4       0xac /tmp/ccNW48KU.o
                 0x00000000000000d4                NMI_Handler
                 0x00000000000000d8                HardFault_Handler
                 0x00000000000000dc                SVC_Handler
@@ -92,7 +92,7 @@ LOAD /tmp/ccwROXZX.o
                 0x0000000000000158                data_init
                 0x000000000000016c                bss_init
  *(.text*)
- .text.startup  0x0000000000000180       0x78 /tmp/cc1FRLUr.o
+ .text.startup  0x0000000000000180       0x78 /tmp/ccbcapEu.o
                 0x0000000000000180                main
  *(.rodata .rodata.* .constdata .constdata.*)
                 0x00000000000001f8                . = ALIGN (0x4)
@@ -110,10 +110,10 @@ LOAD /tmp/ccwROXZX.o
  .v4_bx         0x00000000000001f8        0x0 linker stubs
 
 .iplt           0x00000000000001f8        0x0
- .iplt          0x00000000000001f8        0x0 /tmp/cc1FRLUr.o
+ .iplt          0x00000000000001f8        0x0 /tmp/ccbcapEu.o
 
 .rel.dyn        0x00000000000001f8        0x0
- .rel.iplt      0x00000000000001f8        0x0 /tmp/cc1FRLUr.o
+ .rel.iplt      0x00000000000001f8        0x0 /tmp/ccbcapEu.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
@@ -140,7 +140,7 @@ LOAD /tmp/ccwROXZX.o
                 0x0000000010000000                _edata = .
 
 .igot.plt       0x0000000010000000        0x0 load address 0x00000000000001f8
- .igot.plt      0x0000000010000000        0x0 /tmp/cc1FRLUr.o
+ .igot.plt      0x0000000010000000        0x0 /tmp/ccbcapEu.o
 
 .bss            0x0000000010000000        0x0 load address 0x00000000000001f8
                 0x0000000010000000                _bss = .
@@ -161,48 +161,48 @@ LOAD /tmp/ccwROXZX.o
 OUTPUT(blinky.axf elf32-littlearm)
 
 .debug_info     0x0000000000000000      0x845
- .debug_info    0x0000000000000000      0x4db /tmp/cc1FRLUr.o
- .debug_info    0x00000000000004db      0x36a /tmp/ccwROXZX.o
+ .debug_info    0x0000000000000000      0x4db /tmp/ccbcapEu.o
+ .debug_info    0x00000000000004db      0x36a /tmp/ccNW48KU.o
 
 .debug_abbrev   0x0000000000000000      0x2c7
- .debug_abbrev  0x0000000000000000      0x148 /tmp/cc1FRLUr.o
- .debug_abbrev  0x0000000000000148      0x17f /tmp/ccwROXZX.o
+ .debug_abbrev  0x0000000000000000      0x148 /tmp/ccbcapEu.o
+ .debug_abbrev  0x0000000000000148      0x17f /tmp/ccNW48KU.o
 
 .debug_aranges  0x0000000000000000       0x80
  .debug_aranges
-                0x0000000000000000       0x20 /tmp/cc1FRLUr.o
+                0x0000000000000000       0x20 /tmp/ccbcapEu.o
  .debug_aranges
-                0x0000000000000020       0x60 /tmp/ccwROXZX.o
+                0x0000000000000020       0x60 /tmp/ccNW48KU.o
 
 .debug_ranges   0x0000000000000000       0x98
- .debug_ranges  0x0000000000000000       0x30 /tmp/cc1FRLUr.o
- .debug_ranges  0x0000000000000030       0x68 /tmp/ccwROXZX.o
+ .debug_ranges  0x0000000000000000       0x30 /tmp/ccbcapEu.o
+ .debug_ranges  0x0000000000000030       0x68 /tmp/ccNW48KU.o
 
-.debug_line     0x0000000000000000      0x3ae
- .debug_line    0x0000000000000000      0x1e5 /tmp/cc1FRLUr.o
- .debug_line    0x00000000000001e5      0x1c9 /tmp/ccwROXZX.o
+.debug_line     0x0000000000000000      0x3bd
+ .debug_line    0x0000000000000000      0x1f4 /tmp/ccbcapEu.o
+ .debug_line    0x00000000000001f4      0x1c9 /tmp/ccNW48KU.o
 
-.debug_str      0x0000000000000000      0x469
- .debug_str     0x0000000000000000      0x320 /tmp/cc1FRLUr.o
-                                        0x35d (size before relaxing)
- .debug_str     0x0000000000000320      0x149 /tmp/ccwROXZX.o
-                                        0x208 (size before relaxing)
+.debug_str      0x0000000000000000      0x467
+ .debug_str     0x0000000000000000      0x31e /tmp/ccbcapEu.o
+                                        0x35b (size before relaxing)
+ .debug_str     0x000000000000031e      0x149 /tmp/ccNW48KU.o
+                                        0x206 (size before relaxing)
 
 .comment        0x0000000000000000       0x76
- .comment       0x0000000000000000       0x76 /tmp/cc1FRLUr.o
+ .comment       0x0000000000000000       0x76 /tmp/ccbcapEu.o
                                          0x77 (size before relaxing)
- .comment       0x0000000000000076       0x77 /tmp/ccwROXZX.o
+ .comment       0x0000000000000076       0x77 /tmp/ccNW48KU.o
 
 .ARM.attributes
                 0x0000000000000000       0x2c
  .ARM.attributes
-                0x0000000000000000       0x2c /tmp/cc1FRLUr.o
+                0x0000000000000000       0x2c /tmp/ccbcapEu.o
  .ARM.attributes
-                0x000000000000002c       0x2c /tmp/ccwROXZX.o
+                0x000000000000002c       0x2c /tmp/ccNW48KU.o
 
 .debug_frame    0x0000000000000000       0xe4
- .debug_frame   0x0000000000000000       0x2c /tmp/cc1FRLUr.o
- .debug_frame   0x000000000000002c       0xb8 /tmp/ccwROXZX.o
+ .debug_frame   0x0000000000000000       0x2c /tmp/ccbcapEu.o
+ .debug_frame   0x000000000000002c       0xb8 /tmp/ccNW48KU.o
 
 .debug_loc      0x0000000000000000      0x396
- .debug_loc     0x0000000000000000      0x396 /tmp/ccwROXZX.o
+ .debug_loc     0x0000000000000000      0x396 /tmp/ccNW48KU.o

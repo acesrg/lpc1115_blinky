@@ -21,7 +21,7 @@ vpath %.c src
 ROOT=$(shell pwd)
 
 SRCS = src/main.c \
-src/system_LPC11xx.c \
+../compilation/src/system_LPC11xx.c \
 ../compilation/startup_lpc11xx.c
 
 OBJS = $(SRCS:.c=.o)
@@ -35,7 +35,7 @@ all: proj
 proj: 	$(PROJ_NAME).axf
 
 $(PROJ_NAME).axf: $(SRCS)
-	$(CC) $(CFLAGS) $^ -o $@ -I"inc/"
+	$(CC) $(CFLAGS) $^ -o $@ -I"inc/" -I"../compilation/inc"
 	$(OBJCOPY) -O ihex $(PROJ_NAME).axf $(PROJ_NAME).hex
 	$(OBJCOPY) -O binary $(PROJ_NAME).axf $(PROJ_NAME).bin
 
