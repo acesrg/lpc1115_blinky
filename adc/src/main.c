@@ -32,18 +32,25 @@ int main(void)
         LPC_ADC->CR |= 0x0B00;                  /* CLKDIV = 2 => ADCCLK=4MHz */
 
         LPC_ADC->CR |= 0x01000000; 		/* wololoooooo */
+
         while(1)
         {
-        	while((LPC_ADC->DR[0] < 0x7FFFFFFF));	/* wait for DONE bit */
-                if((LPC_ADC->DR[0] & 0x0000FFC0) != 0)  /* is v>0 */
+        	uint32_t LPC_ADC_DR0;
+        		while(1)
+        		{
+        			LPC_ADC_DR0 = LPC_ADC->GDR;
+        			if((LPC_ADC_DR0 & 0x80000000) != 0) break;
+        		}
+        		LPC_ADC->CR &= ~0x01000000;
+                if((LPC_ADC_DR0 & 0x0000FFC0) != 0)
                 {
-                        LPC_GPIO0->DATA |= 0x80;	/* then turn LED2 on */
+                        LPC_GPIO0->DATA |= 0x80;
                 }
                 else
                 {
-                        LPC_GPIO0->DATA &= ~0x80;	/* otherwise off */
+                        LPC_GPIO0->DATA &= ~0x80;
                 }
-                LPC_ADC->CR |= 0x01000000; 	/* wololoooooo (nochmal) */
+                LPC_ADC->CR |= 0x01000000; 		/* wololoooooo */
         }
         return 0;
 }
