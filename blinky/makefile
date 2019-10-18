@@ -46,7 +46,7 @@ clean:
 	
 bootFlash:
 	dfu-util -d 0x$(DEBUGGER_ID) -c 0 -t 2048 -R -D $(LPCXPRESSO_DIR)/$(BOOT_IMAGE_NAME)
-	$(LPCXPRESSO_DIR)/crt_emu_cm_redlink -p$(TARGET) -vendor=NXP -flash-load-exec "(PROJ_NAME).axf" -flash-driver=$(FLASH_DRIVER)
+	$(LPCXPRESSO_DIR)/crt_emu_cm_redlink -p$(TARGET) -vendor=NXP -flash-load-exec "$(PROJ_NAME).axf" -flash-driver=$(FLASH_DRIVER)
 
 flash:
 	$(LPCXPRESSO_DIR)/crt_emu_cm_redlink -p$(TARGET) -vendor=NXP -flash-load-exec "$(PROJ_NAME).axf" -flash-driver=$(FLASH_DRIVER)
