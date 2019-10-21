@@ -32,8 +32,8 @@ Se espera que cada proyecto siga la siguente estructura:
 * Variables y parámetros tienen tipos de datos completos.
 * Expresiones para constantes #define están encerradas en paréntesis.
 Se recomienda utilizar:
-* Nombres en _MAYUSCULAS_ para identificar registros o instrucciones del procesador.
-* Nombres en _CamelCase_ para identificar funciónes o rutinas de interrupciones.
+* Nombres en _MAYÚSCULAS_ para identificar registros o instrucciones del procesador.
+* Nombres en _camelCase_ para identificar funciónes o rutinas de interrupciones.
 * Prefijos Namespace_ para agrupar funciónes relacionadas (ej. cuando creamos una librería para periféricos).
 
 ## Compilación
