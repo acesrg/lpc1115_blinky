@@ -64,3 +64,24 @@ make flash
 #### Prequisitos
 * dfu-util
 * LPCXpresso (o el directorio bin de dicho software)
+
+## Errores comunes
+
+### Perder acceso de debug (aka: burguearla)
+
+#### Síntomas
+Al intentar cargar un programa obtenemos un error de programa corrupto.
+
+#### Causas
+En realidad, esto sucede porque el binario que quisimos cargar no fue escrito en la placa. Al comprobar esto, la herramienta de flash devuevle el error mencionado.
+Lo mas probable es que esto sea así debido a una configuración erronea en nuestro programa, por ejemplo desconfigurando el clock o desactivando alguna función indispensable en el bus AHB.
+
+#### Solución
+Basta con,
+
+* poner el pin P0.1 (en la placa es el pin FT/GPIO) a GND,
+* dar reset (o desconectar y conectar el cable),
+* liberar el pin P0.1,
+* flashear la placa con un código sin configuraciónes erroneas.
+
+El pin P0.1 habilita el modo de programación ISP, para el cual el microcontrolador configura automáticamente el clock y los buses escenciales, de forma correcta.
