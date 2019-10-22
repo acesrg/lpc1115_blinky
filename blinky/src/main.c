@@ -15,8 +15,11 @@
 
 int main(void)
 {
-	LPC_IOCON->PIO0_7 &= ~0x01;		/* Pin function PIO0_7 */
-	LPC_IOCON->PIO0_7 &= ~0x18;		/* MODE inactive (NOPULL) */
+	/* LED2 Configuration */
+	LPC_IOCON->PIO0_7 &= (uint32_t)~0x07; 		/* FUNC -> PIO0_7 */
+        LPC_IOCON->PIO0_7 &= (uint32_t)~0x18; 		/* MODE -> inactive (NOPULL) */
+        LPC_IOCON->PIO0_7 &= (uint32_t)~0x20; 		/* HYS -> disable */ 
+	LPC_IOCON->PIO0_7 &= (uint32_t)~0x400; 		/* OD -> disable */
 
 	LPC_GPIO0->DIR	|= 0x80;		/* GPIO0_7 as output */
 	LPC_GPIO0->DATA |= 0x80;		/* GPIO0_7 data = 1 */
