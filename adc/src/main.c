@@ -14,6 +14,10 @@
   */
 
 #include "main.h"							/**< Se incluye CMSIS en el header */
+
+/**
+ * Punto de entrada del programa
+ */
 int main(void) 
 {
 	/**
