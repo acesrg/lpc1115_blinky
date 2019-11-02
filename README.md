@@ -29,6 +29,7 @@ Se espera que cada proyecto siga la siguente estructura:
 ```
 ## Reglas de código
 
+* El código debe estar correctamente indentado, se trabaja con tabs equivalentes a 8 espacios.
 * Variables y parámetros tienen tipos de datos completos.
 * Expresiones para constantes #define están encerradas en paréntesis.
 Se recomienda utilizar:
